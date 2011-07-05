@@ -41,6 +41,9 @@
  \sampletext[#1]{\fontbook@featuresize}}
 
 
+%% TODO: call font once
+%%%% print all variants
+
 \newcommand{\printfont}[3][\empty]{%
    \fontspec[#1]{#2}
    \section*{#2 #1 --- Licence: #3}
@@ -54,5 +57,6 @@
    \expandafter\forcsvlist\expandafter\samplefeature\expandafter{\fontbook@features}
    \pagebreak
 }
+
 
 
