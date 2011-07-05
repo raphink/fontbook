@@ -1,6 +1,33 @@
 \ProvidesPackage{fontbook}
 \RequirePackage{fontspec}
 \RequirePackage{xunicode}
+\RequirePackage{kvoptions}
+\RequirePackage{etoolbox}
+
+\SetupKeyvalOptions{
+   family=fontbook,
+   prefix=fontbook@,
+}
+
+%% Options
+
+% Sizes
+\def\fontbook@allsizes{%
+ huge, LARGE, Large, large, normalsize,
+ small, footnotesize, scriptsize, tiny}
+\expandafter\DeclareStringOption\expandafter[\fontbook@allsizes]{sizes}
+\def\fontbook@allsizes{%
+ huge, LARGE, Large, large, normalsize,
+ small, footnotesize, scriptsize, tiny}
+
+% Features
+\def\fontbook@allfeatures{%
+ scshape, itshape, bfseries}
+\expandafter\DeclareStringOption\expandafter[\fontbook@allfeatures]{features}
+
+\DeclareStringOption[large]{featuresize}
+
+\ProcessKeyvalOptions*
 
 \newcommand{\sampletext}[2][]{%
  {\par\csname#2\endcsname \csname#1\endcsname
@@ -9,6 +36,9 @@
  la police d'affichage qui est affichée sur cette page 1 2 3 4 5.
  }
 }
+
+\newcommand{\samplefeature}[1]{%
+ \sampletext[#1]{\fontbook@featuresize}}
 
 
 \newcommand{\printfont}[3][\empty]{%
@@ -20,18 +50,9 @@
      \addcontentsline{toc}{subsection}{#1}
    \fi
 
-   \sampletext{huge}
-   \sampletext{LARGE}
-   \sampletext{Large}
-   \sampletext{large}
-   \sampletext{normalsize}
-   \sampletext{small}
-   \sampletext{footnotesize}
-   \sampletext{scriptsize}
-   \sampletext{tiny}
-   \sampletext[scshape]{large}
-   \sampletext[itshape]{large}
-   \sampletext[bfseries]{large}
+   \expandafter\forcsvlist\expandafter\sampletext\expandafter{\fontbook@sizes}
+   \expandafter\forcsvlist\expandafter\samplefeature\expandafter{\fontbook@features}
    \pagebreak
 }
+
 
