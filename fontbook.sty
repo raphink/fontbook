@@ -29,13 +29,18 @@
 
 \ProcessKeyvalOptions*
 
-\newcommand{\sampletext}[2][]{%
- {\par\csname#2\endcsname \csname#1\endcsname
- #2 #1\\
+\def\fontbook@sampletext{%
  Dans l'affliction éphémère qui m'accable, je teste
  la police d'affichage qui est utilisée sur cette page 1 2 3 4 5.
- }
 }
+
+\newcommand{\sampletext}[2][]{%
+ {\par\csname#2\endcsname \csname#1\endcsname
+ #2 #1\\ \fontbook@sampletext}}
+
+\newcommand{\setsampletext}[1]{%
+ \def\fontbook@sampletext{#1}}
+
 
 \newcommand{\samplefeature}[1]{%
  \sampletext[#1]{\fontbook@featuresize}}
