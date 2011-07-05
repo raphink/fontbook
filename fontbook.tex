@@ -1,0 +1,193 @@
+\documentclass{scrbook}
+
+\usepackage{fontspec}
+\usepackage{xunicode}
+
+% PDF settings
+\usepackage[breaklinks=true,unicode=true]{hyperref}
+\hypersetup{colorlinks,
+           citecolor=black,
+           filecolor=black,
+           linkcolor=black,
+           urlcolor=black,
+           pdfauthor={Rapha\"el Pinson},
+           pdftitle={Nice free/libre fonts}}
+
+\title{Nice free/libre fonts}
+\author{Rapha\"e Pinson}
+
+
+\newcommand{\sampletext}[2][]{%
+ {\par\csname#2\endcsname \csname#1\endcsname
+ #2 #1\\
+ Dans l'affliction éphémère qui m'accable, je teste
+ la police d'affichage qui est affichée sur cette page 1 2 3 4 5.
+ }
+}
+
+
+\newcommand{\printfont}[3][\empty]{%
+   \fontspec[#1]{#2}
+   \section*{#2 #1 --- Licence: #3}
+   \ifx#1\empty
+     \addcontentsline{toc}{section}{#2}
+   \else
+     \addcontentsline{toc}{subsection}{#1}
+   \fi
+
+   \sampletext{huge}
+   \sampletext{LARGE}
+   \sampletext{Large}
+   \sampletext{large}
+   \sampletext{normalsize}
+   \sampletext{small}
+   \sampletext{footnotesize}
+   \sampletext{scriptsize}
+   \sampletext{tiny}
+   \sampletext[scshape]{large}
+   \sampletext[itshape]{large}
+   \sampletext[bfseries]{large}
+   \pagebreak
+}
+
+
+\begin{document}
+
+
+\maketitle
+
+\addchap{Introduction}
+
+
+This book lists serif and sans-serif free and/or open-source fonts suitable for professional edition.
+
+As a minimal requirement, each font:
+\begin{enumerate}
+ \item supports standard ligatures;
+ \item is a readable font suitable for a book interior design.
+\end{enumerate}
+
+
+\cleardoublepage
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{\baselineskip}
+
+
+\addchap{Serif fonts}
+
+\printfont{Calluna}{Exljbris Free Font}
+\printfont[Style=Historic]{Calluna}{Exljbris Free Font}
+\printfont[Numbers=Uppercase]{Calluna}{Exljbris Free Font}
+\printfont[Ligatures=Rare]{Calluna}{Exljbris Free Font}
+
+\printfont{Charis SIL}{OFL}
+
+\printfont{DejaVu Serif}{Public Domain}
+\printfont[Ligatures=Rare]{DejaVu Serif}{Public Domain}
+\printfont[Style=Alternate]{DejaVu Serif}{Public Domain}
+
+\printfont{DejaVu Serif Condensed}{Public Domain}
+\printfont[Ligatures=Rare]{DejaVu Serif Condensed}{Public Domain}
+\printfont[Style=Alternate]{DejaVu Serif Condensed}{Public Domain}
+
+\printfont{EB Garamond}{OFL}
+%\printfont[CharacterVariant=1]{EB Garamond}{OFL}
+\printfont[Ligatures=Rare]{EB Garamond}{OFL}
+\printfont[Numbers=Uppercase]{EB Garamond}{OFL}
+\printfont[Contextuals=Alternate]{EB Garamond}{OFL}
+
+\printfont{Fanwood}{MIT}
+\printfont[Style=Historic]{Fanwood}{MIT}
+\printfont[Numbers=Uppercase]{Fanwood}{MIT}
+
+\printfont{Fertigo Pro}{Exljbris Free Font}
+\printfont[Style=Alternate]{Fertigo Pro}{Exljbris Free Font}
+
+\printfont{FreeSerif}{GPL}
+
+\printfont{GFS Artemisia}{OFL}
+\printfont[Style=Historic]{GFS Artemisia}{OFL}
+
+\printfont{GFS Didot}{OFL}
+\printfont[Style=Historic]{GFS Didot}{OFL}
+
+\printfont{Goudy Bookletter 1911}{Public Domain}
+
+\printfont{Heuristica}{OFL}
+
+\printfont{Istok}{GPL}
+
+\printfont{Junicode}{GPL}
+\printfont[Ligatures=Rare]{Junicode}{GPL}
+\printfont[Style=Historic]{Junicode}{GPL}
+\printfont[Numbers=OldStyle]{Junicode}{GPL}
+\printfont[Style=Alternate]{Junicode}{GPL}
+%\printfont[StylisticSet=2]{Junicode}{GPL}
+%\printfont[StylisticSet=6]{Junicode}{GPL}
+%\printfont[StylisticSet=2]{Junicode}{GPL}
+
+\printfont{Linden Hill}{Some Free License}
+\printfont[Style=Historic]{Linden Hill}{Some Free License}
+\printfont[Numbers=Uppercase]{Linden Hill}{Some Free License}
+
+
+\printfont{Linux Libertine O}{Public Domain}
+\printfont[Ligatures=Historical]{Linux Libertine O}{Public Domain}
+\printfont{Linux Libertine Slanted O}{Public Domain}
+\printfont{Linux Libertine Capitals O}{Public Domain}
+\printfont{Linux Libertine Display O}{Public Domain}
+\printfont{Linux Libertine Display Capitals O}{Public Domain}
+\printfont{Linux Libertine Initials O}{Public Domain}
+
+\printfont{Prociono}{Public Domain}
+\printfont[Ligatures=Rare]{Prociono}{Public Domain}
+
+\printfont{Sorts Mill Goudy}{OFL}
+\printfont[Style=Historic]{Sorts Mill Goudy}{OFL}
+\printfont[Ligatures=Rare]{Sorts Mill Goudy}{OFL}
+\printfont[Numbers=Uppercase]{Sorts Mill Goudy}{OFL}
+
+\printfont{Vollkorn}{OFL}
+\printfont[Ligatures=Rare]{Vollkorn}{OFL}
+\printfont[Style=Alternate]{Vollkorn}{OFL}
+
+
+\addchap{Sans serif fonts}
+
+\printfont{Anivers}{Exljbris Free Font}
+
+\printfont{Calluna Sans}{Exljbris Free Font}
+\printfont[Style=Historic]{Calluna Sans}{Exljbris Free Font}
+\printfont[Numbers=Uppercase]{Calluna Sans}{Exljbris Free Font}
+\printfont[Ligatures=Historical]{Calluna Sans}{Exljbris Free Font}
+
+\printfont{DejaVu Sans}{Public Domain}
+\printfont[Ligatures=Rare]{DejaVu Sans}{Public Domain}
+\printfont[Style=Alternate]{DejaVu Sans}{Public Domain}
+
+\printfont{DejaVu Sans Condensed}{Public Domain}
+\printfont[Ligatures=Rare]{DejaVu Sans Condensed}{Public Domain}
+\printfont[Style=Alternate]{DejaVu Sans Condensed}{Public Domain}
+
+\printfont{FreeSans}{GPL}
+
+\printfont{GFS Neohellenic}{OFL}
+\printfont[Style=Historic]{GFS Neohellenic}{OFL}
+
+\printfont{Linux Biolinum O}{Public Domain}
+\printfont{Linux Biolinum Slanted O}{Public Domain}
+\printfont{Linux Biolinum Capitals O}{Public Domain}
+\printfont{Linux Biolinum Outline O}{Public Domain}
+\printfont{Linux Biolinum Shadow O}{Public Domain}
+\printfont{Linux Biolinum Keyboard O}{Public Domain}
+
+
+\printfont{Purisa}{GPL}
+\printfont{Sawasdee}{GPL}
+\printfont{Umpush}{GPL}
+\printfont{Waree}{GPL}
+
+\end{document}
+
+
