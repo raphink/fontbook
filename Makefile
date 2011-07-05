@@ -1,7 +1,7 @@
 BOOK_NAME=fontbook
 FTP_TOPDIR=fonts
 FTP_PDFDIR=$(FTP_TOPDIR)
-TARGETS=$(BOOK_NAME)
+TARGETS=$(BOOK_NAME) $(BOOK_NAME)-freefonts
 TEXINPUTS=
 
 # Include crocodoc conf
@@ -29,7 +29,7 @@ crocupload: $(BOOK_NAME).json
 
 clean:
 	rm -f *.ps *.aux *.log *.out *.lol
-	rm -f *.idx *.ind *.ilg *.toc *.dvi
+	rm -f *.idx *.ind *.ilg *.toc *.dvi *.glo
 	rm -f *.json
 	# Remove only target pdf
 	rm -f $(addsuffix *.pdf,$(TARGETS))
