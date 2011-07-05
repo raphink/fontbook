@@ -1,0 +1,37 @@
+\ProvidesPackage{fontbook}
+\RequirePackage{fontspec}
+\RequirePackage{xunicode}
+
+\newcommand{\sampletext}[2][]{%
+ {\par\csname#2\endcsname \csname#1\endcsname
+ #2 #1\\
+ Dans l'affliction éphémère qui m'accable, je teste
+ la police d'affichage qui est affichée sur cette page 1 2 3 4 5.
+ }
+}
+
+
+\newcommand{\printfont}[3][\empty]{%
+   \fontspec[#1]{#2}
+   \section*{#2 #1 --- Licence: #3}
+   \ifx#1\empty
+     \addcontentsline{toc}{section}{#2}
+   \else
+     \addcontentsline{toc}{subsection}{#1}
+   \fi
+
+   \sampletext{huge}
+   \sampletext{LARGE}
+   \sampletext{Large}
+   \sampletext{large}
+   \sampletext{normalsize}
+   \sampletext{small}
+   \sampletext{footnotesize}
+   \sampletext{scriptsize}
+   \sampletext{tiny}
+   \sampletext[scshape]{large}
+   \sampletext[itshape]{large}
+   \sampletext[bfseries]{large}
+   \pagebreak
+}
+
